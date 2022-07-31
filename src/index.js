@@ -4,11 +4,11 @@ const connection =  require("./database/connection");
 const transactionsRouter = require('./routers/transactions');
 
 const PORT = process.env.SERVER_PORT;
-const TRANSACTIONS_ROUTE = '/webhooks/transactions';
+const TRANSACTIONS_ROUTE = '/webhooks/transactions'; 
 
 const app  = express();
 app.use(TRANSACTIONS_ROUTE, transactionsRouter.transactions);
-//app.use("/webhooks/transactions",middleware,);
+
 app.listen(PORT, (req, res) => 
     console.log("app is listening on port : " + PORT)
 );
